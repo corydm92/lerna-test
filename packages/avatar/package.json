@@ -5,7 +5,8 @@
   "author": "Cory Morrissey <corymorrissey@lithia.com>",
   "homepage": "https://github.com/corydm92/lerna-test#readme",
   "license": "MIT",
-  "main": "lib/avatar.js",
+  "source": "src/avatar.js",            
+  "main": "lib/avatar.js", 
   "style": "lib/avatar.css",
   "directories": {
     "lib": "lib",
@@ -22,7 +23,9 @@
     "url": "git+https://github.com/corydm92/lerna-test.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "microbundle",
+    "dev": "microbundle watch"
   },
   "bugs": {
     "url": "https://github.com/corydm92/lerna-test/issues"

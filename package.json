@@ -2,6 +2,10 @@
   "name": "root",
   "private": true,
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^4.0.0",
+    "microbundle": "^0.13.3"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
   }
 }
