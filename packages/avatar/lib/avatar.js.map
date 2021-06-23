@@ -1,1 +1,0 @@
-{"version":3,"file":"avatar.js","sources":["../src/avatar.js"],"sourcesContent":["'use strict';\n\nmodule.exports = avatar;\n\nfunction avatar() {\n    // TODO\n}\n "],"names":["module","exports"],"mappings":"AAEAA,OAAOC,QAEP"}

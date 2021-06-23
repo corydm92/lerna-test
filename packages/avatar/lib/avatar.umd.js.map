@@ -1,1 +1,0 @@
-{"version":3,"file":"avatar.umd.js","sources":["../src/avatar.js"],"sourcesContent":["'use strict';\n\nmodule.exports = avatar;\n\nfunction avatar() {\n    // TODO\n}\n "],"names":["module","exports"],"mappings":"6EAEAA,OAAOC,QAEP"}

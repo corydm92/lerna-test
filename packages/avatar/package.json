@@ -7,7 +7,7 @@
   "license": "MIT",
   "source": "src/avatar.js",            
   "main": "lib/avatar.js", 
-  "style": "lib/avatar.css",
+  "style": "src/avatar.css",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
