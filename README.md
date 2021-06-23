@@ -1,2 +1,2 @@
 # lerna-test
-Monorepo using Lerna to manage multiple NPM packages
+Monorepo using Lerna to manage multiple NPM packages.
