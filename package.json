@@ -1,18 +1,21 @@
 {
-  "name": "root",
-  "private": true,
-  "devDependencies": {
-    "lerna": "^4.0.0",
-    "microbundle": "^0.13.3"
-  },
-  "peerDependencies": {
-    "react": "^17.0.2"
-  },
-  "scripts": {
-    "build": "lerna run build",
-    "dev": "lerna run dev"
-  },
-  "prettier": {
+	"name": "root",
+	"private": true,
+	"devDependencies": {
+		"lerna": "^4.0.0",
+		"microbundle": "^0.13.3"
+	},
+	"peerDependencies": {
+		"react": "^17.0.2",
+		"@material-ui/core": "^4.11.3",
+		"@material-ui/icons": "^4.11.2",
+		"clsx": "^1.1.1"
+	},
+	"scripts": {
+		"build": "lerna run build",
+		"dev": "lerna run dev"
+	},
+	"prettier": {
 		"printWidth": 80,
 		"singleQuote": true,
 		"semi": true,
