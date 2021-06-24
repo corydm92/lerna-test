@@ -79,3 +79,7 @@ npm info @...scope
 lerna run build > `npm WARN Local package.json exists, but node_modules missing, did you mean to install?`
 
 - When runing a lerna command that triggers a npm package in a module (lerna run build > microbundle), you must define that script in the root package.json, and trigger it with "npm run xxx". I believe this is to do with scoping our project node_modules in order to run these inside a package that has no existing node_modules.
+
+How do I retry publishing if publish fails?
+
+- If it has been updated, you can force re-publish. `lerna publish --force-publish $(ls packages/)`
