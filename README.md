@@ -96,14 +96,17 @@ npm info @...scope
 
 - ex: before adding button v3.0.0
 
+```
 node_modules/
 ├─ @cdm-lerna-test/
 │ ├─ button(v1.0.0)/
 │ ├─ avatar/
 │ ├─ usage/
+```
 
 - ex: After adding button v3.0.0
 
+```
 node_modules/
 ├─ @cdm-lerna-test/
 │ ├─ button(v3.0.0)/
@@ -111,6 +114,7 @@ node_modules/
 │ ├─ usage/
 │ │ ├─ node_modules/
 │ │ │ ├─ button(v1.0.0)/
+```
 
 ---
 
