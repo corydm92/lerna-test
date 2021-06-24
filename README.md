@@ -91,3 +91,8 @@ How do I retry publishing if publish fails?
 Have package names capatialized
 
 - ex: @cdm-lerna-test/button > @cdm-lerna-test/Button
+
+Don't use index, makes stack traces hard
+
+- ex: Avatar/index.js > Avatar/Avatar.js
+- ex Button/lib/index.js > Button/lib/Button.js
