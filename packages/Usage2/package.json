@@ -1,6 +1,6 @@
 {
 	"name": "@cdm-lerna-test/usage2",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Second implementation of usage, without lerna bootstrap",
 	"author": "Cory Morrissey <corymorrissey@lithia.com>",
 	"homepage": "https://github.com/corydm92/lerna-test#readme",
