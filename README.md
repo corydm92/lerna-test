@@ -85,3 +85,9 @@ lerna run build > `npm WARN Local package.json exists, but node_modules missing,
 How do I retry publishing if publish fails?
 
 - If it has been updated, you can force re-publish. `lerna publish --force-publish $(ls packages/)`
+
+## Todos
+
+Have package names capatialized
+
+- ex: @cdm-lerna-test/button > @cdm-lerna-test/Button
