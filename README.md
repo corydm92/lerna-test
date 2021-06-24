@@ -65,6 +65,10 @@ lerna updated
 
 - Shows just the packages that have changed, useful to make sure changes are only in directories you have touched
 
+lerna bootstrap
+
+- It seems that we don't need to be using this command, it's related to adding dependencies and symlinking packages, but thus far I don't see it doing anything and imports work as intended outside this project.
+
 ## Other Commands
 
 npm info @...scope
