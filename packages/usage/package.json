@@ -1,0 +1,32 @@
+{
+	"name": "@cdm-lerna-test/usage",
+	"version": "0.0.0",
+	"description": "Component that references other packages in our MonoRepo",
+	"author": "Cory Morrissey <corymorrissey@lithia.com>",
+	"homepage": "https://github.com/corydm92/lerna-test#readme",
+	"license": "MIT",
+	"main": "lib/index.js",
+	"source": "index.js",
+	"directories": {
+		"lib": "lib",
+		"test": "__tests__"
+	},
+	"files": [
+		"lib"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/corydm92/lerna-test.git"
+	},
+	"scripts": {
+		"test": "echo \"Error: run tests from root\" && exit 1",
+		"build": "microbundle --jsx React.createElement --no-compress",
+		"dev": "microbundle --jsx React.createElement watch"
+	},
+	"bugs": {
+		"url": "https://github.com/corydm92/lerna-test/issues"
+	}
+}
