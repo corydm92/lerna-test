@@ -36,6 +36,13 @@ lerna updated
 
 - Shows just the packages that have changed, useful to make sure changes are only in directories you have touched
 
+## Other Commands
+
+npm info @...scope
+
+- Useful to get info on a package you have pushed
+- ex: npm info @cdm-lerna-test/avatar
+
 ## Questions
 
 - Can I use a global public/private key in project root?
