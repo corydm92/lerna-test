@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 const CustomButton = ({ className, buttonText, ...props }) => {
 	return (
 		<Button
-			onClick={console.log(buttonText)}
+			onClick={() => console.log(buttonText)}
 			className={className}
 			variant="contained"
 			{...props}

@@ -2,6 +2,35 @@
 
 Monorepo using Lerna to manage multiple NPM packages.
 
+## Why?
+
+We are using Lerna in independent mode vs fixed mode. This means that each package we create is its own entity within npm. This makes it very easy to add features without worrying about breaking other components.
+
+Issue with Fixed Mode:
+
+- Library v1.0.0
+- Grid component being used in App 1
+- App 2 needs updated version of grid, causing a breaking change in the grid
+- Make breaking change to grid, Library v2.0.0
+- App 2 needs a new display container component that is not in the library
+- Create new new display container component, Library v2.1.0
+- App 1 wants to use the new component as well, but does not want to use the "new" grid.
+
+This is not possible, as the new component has been added to the library after the grid's breaking change.
+
+Solution with Independent Mode:
+
+- Grid v1.0.0
+- Grid component being used in App 1
+- App 2 needs updated version of grid, causing a breaking change in the grid
+- Make breaking change to grid, Grid v2.0.0
+- App 2 needs a new new display container component that is not in the library
+- Create new new display container component, DisplayContainerComponent v1.0.0
+- App 1 wants to use the new component as well, but does not want to use the "new" grid.
+- App 1 keeps Grid v1.0.0, and installs DisplayContainerComponent v1.0.0
+
+Because these modules are packaged independently, we get to pick and choose exactly what we need to go in which app.
+
 ## Notes
 
 Linking node_modules to /packages/...
