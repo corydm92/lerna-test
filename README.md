@@ -35,15 +35,9 @@ Because these modules are packaged independently, we get to pick and choose exac
 
 ## Notes
 
-Linking node_modules to /packages/...
-
 Add .gitignore to modules in /packages/...
 
 - Add a gitignore to ignore our distribution directory per module
-
-Add .npmignore to modules in /packages/...
-
-- Add a npmignore to ignore our everything BUT distribution directory per module
 
 ## Lerna Commands
 
