@@ -13,7 +13,8 @@
 	},
 	"scripts": {
 		"build": "lerna run build",
-		"dev": "lerna run dev"
+		"dev": "lerna run dev",
+		"publish": "lerna publish"
 	},
 	"prettier": {
 		"printWidth": 80,

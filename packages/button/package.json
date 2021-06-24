@@ -28,5 +28,8 @@
 	},
 	"bugs": {
 		"url": "https://github.com/corydm92/lerna-test/issues"
+	},
+	"peerDependencies": {
+		"@material-ui/core": "^4.11.3"
 	}
 }
