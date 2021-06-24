@@ -9,6 +9,7 @@
     "react": "^17.0.2"
   },
   "scripts": {
-    "build": "lerna run build"
+    "build": "lerna run build",
+    "dev": "lerna run dev"
   }
 }

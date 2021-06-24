@@ -1,8 +1,9 @@
 'use strict';
+import React from "react";
 
-module.exports = avatar;
 
-function avatar() {
-    // TODO
+function Avatar() {
+    return <img src="" alt="" />
 }
  
+export default Avatar;
