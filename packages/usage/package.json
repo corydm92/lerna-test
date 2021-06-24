@@ -30,7 +30,7 @@
 		"url": "https://github.com/corydm92/lerna-test/issues"
 	},
 	"dependencies": {
-		"@cdm-lerna-test/avatar": "1.0.0",
-		"@cdm-lerna-test/button": "2.1.1"
+		"@cdm-lerna-test/avatar": "^1.0.0",
+		"@cdm-lerna-test/button": "^2.1.1"
 	}
 }
