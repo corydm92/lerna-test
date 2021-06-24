@@ -1,6 +1,6 @@
 {
 	"name": "@cdm-lerna-test/usage",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Component that references other packages in our MonoRepo",
 	"author": "Cory Morrissey <corymorrissey@lithia.com>",
 	"homepage": "https://github.com/corydm92/lerna-test#readme",
