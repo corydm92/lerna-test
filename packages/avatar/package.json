@@ -6,8 +6,8 @@
   "homepage": "https://github.com/corydm92/lerna-test#readme",
   "license": "MIT",
   "source": "src/avatar.js",            
-  "main": "lib/avatar.js", 
   "style": "src/avatar.css",
+  "main": "lib/avatar.js", 
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "microbundle",
+    "build": "microbundle --no-compress",
     "dev": "microbundle watch"
   },
   "bugs": {

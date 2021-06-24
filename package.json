@@ -11,5 +11,17 @@
   "scripts": {
     "build": "lerna run build",
     "dev": "lerna run dev"
-  }
+  },
+  "prettier": {
+		"printWidth": 80,
+		"singleQuote": true,
+		"semi": true,
+		"tabWidth": 2,
+		"trailingComma": "es5",
+		"useTabs": true,
+		"quoteProps": "as-needed",
+		"bracketSpacing": true,
+		"jsxBracketSameLine": false,
+		"arrowParens": "always"
+	}
 }

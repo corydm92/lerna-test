@@ -2,8 +2,8 @@
 import React from "react";
 
 
-function Avatar() {
-    return <img src="" alt="" />
+function Avatar({ ...props }) {
+    return <img {...props} />
 }
  
 export default Avatar;
