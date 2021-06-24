@@ -1,33 +1,33 @@
 {
-  "name": "@cdm-lerna-test/avatar",
-  "version": "1.0.0-alpha.1",
-  "description": "avatar",
-  "author": "Cory Morrissey <corymorrissey@lithia.com>",
-  "homepage": "https://github.com/corydm92/lerna-test#readme",
-  "license": "MIT",
-  "source": "src/avatar.js",            
-  "style": "src/avatar.css",
-  "main": "lib/avatar.js", 
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/corydm92/lerna-test.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "microbundle --no-compress",
-    "dev": "microbundle watch"
-  },
-  "bugs": {
-    "url": "https://github.com/corydm92/lerna-test/issues"
-  }
+	"name": "@cdm-lerna-test/avatar",
+	"version": "1.0.0-alpha.1",
+	"description": "avatar",
+	"author": "Cory Morrissey <corymorrissey@lithia.com>",
+	"homepage": "https://github.com/corydm92/lerna-test#readme",
+	"license": "MIT",
+	"source": "avatar.js",
+	"style": "avatar.css",
+	"main": "lib/avatar.js",
+	"directories": {
+		"lib": "lib",
+		"test": "__tests__"
+	},
+	"files": [
+		"lib"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/corydm92/lerna-test.git"
+	},
+	"scripts": {
+		"test": "echo \"Error: run tests from root\" && exit 1",
+		"build": "microbundle --no-compress",
+		"dev": "microbundle watch"
+	},
+	"bugs": {
+		"url": "https://github.com/corydm92/lerna-test/issues"
+	}
 }
