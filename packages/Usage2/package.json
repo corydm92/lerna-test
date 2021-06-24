@@ -22,7 +22,9 @@
 		"url": "git+https://github.com/corydm92/lerna-test.git"
 	},
 	"scripts": {
-		"test": "echo \"Error: run tests from root\" && exit 1"
+		"test": "echo \"Error: run tests from root\" && exit 1",
+		"build": "microbundle --jsx React.createElement --no-compress",
+		"dev": "microbundle --jsx React.createElement watch"
 	},
 	"bugs": {
 		"url": "https://github.com/corydm92/lerna-test/issues"
