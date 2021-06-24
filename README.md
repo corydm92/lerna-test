@@ -100,3 +100,7 @@ Don't use index, makes stack traces hard
 
 - ex: Avatar/index.js > Avatar/Avatar.js
 - ex Button/lib/index.js > Button/lib/Button.js
+
+Provide release notes when making version bumps
+
+- Add what has changed in the package readme
