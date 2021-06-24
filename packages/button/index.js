@@ -1,12 +1,17 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 
-const CustomButton = ({ className, buttonText, ...props }) => {
+const CustomButton = ({
+	className,
+	buttonText,
+	variant = 'contained',
+	...props
+}) => {
 	return (
 		<Button
 			onClick={() => console.log(buttonText)}
 			className={className}
-			variant="contained"
+			variant={variant}
 			{...props}
 		>
 			{buttonText}
