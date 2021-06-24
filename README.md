@@ -78,17 +78,47 @@ npm info @...scope
 
 ## Problems/Solutions
 
-'h is not defined'
+- Q: 'h is not defined'
 
-- This was related to microbundle not compiling jsx correctly, must add the `--jsx React.createElement` flag to the build script.
+- A: This was related to microbundle not compiling jsx correctly, must add the `--jsx React.createElement` flag to the build script.
 
-lerna run build > `npm WARN Local package.json exists, but node_modules missing, did you mean to install?`
+---
 
-- When runing a lerna command that triggers a npm package in a module (lerna run build > microbundle), you must define that script in the root package.json, and trigger it with "npm run xxx". I believe this is to do with scoping our project node_modules in order to run these inside a package that has no existing node_modules.
+- Q: Why doesn't lerna run build work? ex: lerna run build > `npm WARN Local package.json exists, but node_modules missing, did you mean to install?`
 
-How do I retry publishing if publish fails?
+- A: When runing a lerna command that triggers a npm package in a module (lerna run build > microbundle), you must define that script in the root package.json, and trigger it with "npm run xxx". I believe this is to do with scoping our project node_modules in order to run these inside a package that has no existing node_modules.
 
-- If it has been updated, you can force re-publish. `lerna publish --force-publish $(ls packages/)`
+---
+
+- Q: How do I retry publishing if publish fails?
+
+- A: If it has been updated, you can force re-publish. `lerna publish --force-publish $(ls packages/)`. If this doesn't work, you can add a small commit to force a change, then re commit and re publish.
+
+---
+
+- Q: What happens if a module is symlinked to a version of a component, but I want to still use the most updated version of a component? (ex: symlinked to button v1.0.0, but I want to use button v3.0.0 in the project)?
+
+- A: Lerna manages this for us, if we inspect our node_modules in the host app we can see that all the dependencies are listed under our scope. If we follow the example and want to add button v3.0.0 as a dependency to the host app, we can do that. It will replace the node_module/button/... package, but the symlinked version will be moved into the directory that that specific version is needed.
+
+- ex: before adding button v3.0.0
+
+node_modules/
+├─ @cdm-lerna-test/
+│ ├─ button(v1.0.0)/
+│ ├─ avatar/
+│ ├─ usage/
+
+- ex: After adding button v3.0.0
+
+node_modules/
+├─ @cdm-lerna-test/
+│ ├─ button(v3.0.0)/
+│ ├─ avatar/
+│ ├─ usage/
+│ │ ├─ node_modules/
+│ │ │ ├─ button(v1.0.0)/
+
+---
 
 ## Todos
 
