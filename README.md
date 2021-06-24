@@ -2,6 +2,8 @@
 
 Monorepo using Lerna to manage multiple NPM packages.
 
+The first half of this project was using this video, a great reference for starting: https://www.youtube.com/watch?v=pU87ufl2lDc&ab_channel=chantastic
+
 ## Why?
 
 We are using Lerna in independent mode vs fixed mode. This means that each package we create is its own entity within npm. This makes it very easy to add features without worrying about breaking other components.
