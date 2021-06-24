@@ -1,6 +1,6 @@
 {
 	"name": "@cdm-lerna-test/avatar",
-	"version": "1.0.0-alpha.4",
+	"version": "1.0.0",
 	"description": "avatar",
 	"author": "Cory Morrissey <corymorrissey@lithia.com>",
 	"homepage": "https://github.com/corydm92/lerna-test#readme",
