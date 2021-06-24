@@ -72,7 +72,7 @@ npm info @...scope
 
 ## Problems/Solutions
 
-- Q: 'h is not defined'
+- Q: Why am I getting `h is not defined` after adding a module to my host app?
 
 - A: This was related to microbundle not compiling jsx correctly, must add the `--jsx React.createElement` flag to the build script.
 
