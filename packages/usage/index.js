@@ -11,4 +11,4 @@ const CustomUsage = ({ showButton = true, showAvatar = true, ...props }) => {
 	);
 };
 
-export default Customusage;
+export default CustomUsage;
