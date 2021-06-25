@@ -6,6 +6,8 @@ The first half of this project was using this video, a great reference for start
 
 ## Why?
 
+Creating a multi component repository allows us as engineers to have a single source for package development. Having one repo helps symlinking issues, and not having multiple repositories for single packages provides a better workflow.
+
 We are using Lerna in independent mode vs fixed mode. This means that each package we create is its own entity within npm. This makes it very easy to add features without worrying about breaking other components.
 
 Issue with Fixed Mode:
@@ -132,3 +134,5 @@ Don't use index, makes stack traces hard
 Provide release notes when making version bumps
 
 - Add what has changed in the package readme
+
+- Learn more about `lerna bootstrap`
