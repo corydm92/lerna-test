@@ -20,6 +20,7 @@
 		"build": "lerna run build",
 		"dev": "lerna run dev",
 		"publish": "lerna publish",
+		"bootstrap": "lerna bootstrap",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook"
 	},
