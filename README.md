@@ -63,7 +63,7 @@ lerna updated
 
 lerna bootstrap
 
-- It seems that we don't need to be using this command, it's related to adding dependencies and symlinking packages, but thus far I don't see it doing anything and imports work as intended outside this project.
+- Running this command will take any dependencies in packages and add them to a package-level node_modules directory. This step seems to be taken care of durring the build process, I will need to do more testing.
 
 ## Other Commands
 
@@ -135,4 +135,4 @@ Provide release notes when making version bumps
 
 - Add what has changed in the package readme
 
-- Learn more about `lerna bootstrap`
+Learn more about `lerna bootstrap`
