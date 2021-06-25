@@ -1,6 +1,6 @@
 # lerna-test
 
-Monorepo using Lerna to manage multiple NPM packages.
+Monorepo using Lerna (independent) to handle managing our mutli package repository, and Microbundle to handle bundling each module.
 
 The first half of this project was using this video, a great reference for starting: https://www.youtube.com/watch?v=pU87ufl2lDc&ab_channel=chantastic
 
