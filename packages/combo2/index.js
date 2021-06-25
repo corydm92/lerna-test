@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '@cdm-lerna-test/button';
 
 const Combo2 = () => {
-	// Combo2 small change
+	// Combo2 small change 2
 	return (
 		<div>
 			<Button buttonText="Combo2 test" />
