@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"main": "lib/combo.js",
 	"dependencies": {
-		"@cdm-lerna-test/button": "^2.2.0"
+		"@cdm-lerna-test/button": "^1.0.0"
 	},
 	"directories": {
 		"lib": "lib",
