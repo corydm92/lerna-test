@@ -97,7 +97,7 @@ This project is using storybook in the root of our repository as our development
 
 `lerna run build`
 
-- Runs our build process for each changed package in packages/
+- Runs our build process for each changed package in /packages
 
 ---
 
