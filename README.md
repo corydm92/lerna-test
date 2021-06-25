@@ -1,6 +1,6 @@
 # lerna-test
 
-Monorepo using Lerna (independent) to handle managing our mutli package repository, and Microbundle to handle bundling each module. Our development environment is driven by Storybook.
+Monorepo using Lerna (independent) to handle managing our mutli package repository, and Microbundle to handle building each module. Our development environment is driven by Storybook.
 
 The first half of this project was using this video, a great reference for starting: https://www.youtube.com/watch?v=pU87ufl2lDc&ab_channel=chantastic
 
@@ -39,9 +39,27 @@ Because these modules are packaged independently, we get to pick and choose exac
 
 ---
 
+## Initial Setup
+
+TODO
+
+---
+
+## Starting The Dev Environment
+
+- We need to run two things to start working in this environment, we need to run storybook and we need to set microbundle to watch for changings in real time.
+
+- In one terminal, run `npm run storybook` to kick off our storybook server.
+
+- In another terminal, run `npm run dev`, this will run microbundle in watch mode for all of our packages. Note that there is no output in this terminal, perhaps there is a verbose flag but currently not an issue one way or another.
+
+---
+
 ## Lerna
 
 TODO
+
+https://github.com/lerna/lerna
 
 ---
 
@@ -139,7 +157,7 @@ These commands are ran by lerna, running at the package level
 
 - A: This was related to microbundle not compiling jsx correctly, must add the `--jsx React.createElement` flag to the build script.
 
-- Q: Why doesn't lerna run build work? ex: lerna run build > `npm WARN Local package.json exists, but node_modules missing, did you mean to install?`
+- Q: Why doesn't `lerna run build` work? ex: `lerna run build` > `npm WARN Local package.json exists, but node_modules missing, did you mean to install?`
 
 - A: When runing a lerna command that triggers a npm package in a module (lerna run build > microbundle), you must define that script in the root package.json, and trigger it with "npm run xxx". I believe this is to do with scoping our project node_modules in order to run these inside a package that has no existing node_modules.
 
@@ -173,6 +191,17 @@ node_modules/
 │ │ │ ├─ button(v1.0.0)/
 ```
 
+- Q: I want to name my package with a capital, as is common convention with React components?
+
+- A: NPM does not support capitalized scopes
+
+- ex:
+
+```
+package name: (@cdm-lerna-test/test1) @cdm-lerna-test/Test1
+Sorry, name can no longer contain capital letters.
+```
+
 ---
 
 ## Notes
@@ -185,17 +214,16 @@ Add .gitignore to modules in /packages/...
 
 ## Todos
 
-Have package names capatialized
+- Don't use index for distribution files, makes stack traces hard
 
-- ex: @cdm-lerna-test/button > @cdm-lerna-test/Button
+- ex: `Button/lib/index.js > Button/lib/Button.js`
 
-Don't use index, makes stack traces hard
+- Add Initial Setup documentation
 
-- ex: Avatar/index.js > Avatar/Avatar.js
-- ex Button/lib/index.js > Button/lib/Button.js
-
-Provide release notes when making version bumps
+- Provide release notes when making version bumps
 
 - Add what has changed in the package readme
 
-Learn more about `lerna bootstrap`
+- Learn more about `lerna bootstrap`
+
+- Actions not tracking in storybook

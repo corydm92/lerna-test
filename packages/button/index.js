@@ -5,14 +5,15 @@ const CustomButton = ({
 	className,
 	buttonText,
 	variant = 'contained',
-	...props
+	primary = true,
+	callback = () => console.log('Click!'),
 }) => {
 	return (
 		<Button
-			onClick={() => console.log(buttonText)}
+			onClick={callback}
 			className={className}
 			variant={variant}
-			{...props}
+			color={primary ? 'primary' : 'secondary'}
 		>
 			{buttonText}
 		</Button>
