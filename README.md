@@ -41,7 +41,89 @@ Because these modules are packaged independently, we get to pick and choose exac
 
 ## Initial Setup
 
-TODO
+This setup assumes you have a npm account, organization, and have npm credentials to publish from the console.
+
+- Start by initializing lerna in a new repository, this sets up our project structure.
+
+`npx lerna init --independent`
+
+- Add microbundle and lerna as a dev dependencies.
+
+`npm i -D microbundle lerna`
+
+- Create your first package.
+
+`lerna create @scope/package-name`
+I personally set the version to 0.0.0 when starting
+Add a description (can be changed in the packages package json)
+I use MIT for licence
+`Entry Point` is where your built code will live. I leave this as lib/package-name.js
+
+- Next we move to `packages/package-name/package.json` add the source file, this is the file that will hold the actual code you want to build.
+
+Go to pacakge.json > add a new attribute called `"source": "path-to-source-file.js"`.
+
+- From here, this is how your new packages package.json should look. If you have questions on other attributes, please refer to lerna's documentaiton:
+
+```
+{
+  "name": "@test/test-package",
+  "version": "0.0.0",
+  "description": "test package",
+  "author": "Test User <testuser@email.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/test-package.js",
+  "source": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}
+```
+
+- Now before we do any more work, lets add a .gitignore file and tell git to ignore the lib directory.
+
+- Next, we add our component. Lets add a button.
+
+Create index.js if you have not already
+Add the following code:
+
+```
+import React from 'react';
+
+const CustomButton = ({
+	buttonText = 'Custom Button Text',
+	onClick = () => console.log('Click!'),
+}) => <button onClick={onClick}>{buttonText}</button>;
+
+export default CustomButton;
+```
+
+- Now we need to add two scripts, one to build and one to watch for changes durring development. Add the following scripts to the test package package.json
+
+```
+"build": "microbundle --jsx React.createElement --no-compress",
+"dev": "microbundle --jsx React.createElement watch"
+```
+
+- The last thing we need to do to publish these packages is to add a command in the root directory of our project. Lerna will look through each pacakge, and run each matching script it finds with the "build" and "dev" script tags.
+
+```
+"build": "lerna run build",
+"dev": "lerna run dev",
+```
+
+- If
 
 ---
 
@@ -90,6 +172,10 @@ This project is using storybook in the root of our repository as our development
 - Once changes are ready to be pushed to npm, this handles versioning and publishing.
 
 ## Lerna Commands
+
+`npx lerna init --independent`
+
+- Initializes a new lerna project in independent mode
 
 `lerna create <scope>`
 
