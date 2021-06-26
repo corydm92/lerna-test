@@ -18,7 +18,7 @@ The first half of this project was using this video, a great reference for start
 | [Microbundle Commands](#microbundle-commands)                 |
 | [Storybook Commands](#storybook-commands)                     |
 | [Other Commands](#other-commands)                             |
-| [Questions/Answers](#questions-/-answers)                     |
+| [Questions/Answers](#questionsanswers)                        |
 
 ## Why?
 
