@@ -4,6 +4,22 @@ Monorepo using Lerna (independent) to handle managing our mutli package reposito
 
 The first half of this project was using this video, a great reference for starting: https://www.youtube.com/watch?v=pU87ufl2lDc&ab_channel=chantastic
 
+| Table of Contents            |
+| ---------------------------- |
+| [Why?](#why)                 |
+| Initial Lerna Setup          |
+| Initial Storybook Setup      |
+| Starting The Dev Environment |
+| Lerna Info                   |
+| Microbundle Info             |
+| Storybook Info               |
+| Root Level Commands          |
+| Lerna Commands               |
+| Microbundle Commands         |
+| Storybook Commands           |
+| Other Commands               |
+| Questions/Answers            |
+
 ---
 
 ## Why?
@@ -92,6 +108,7 @@ Go to pacakge.json > add a new attribute called `"source": "path-to-source-file.
 ```
 
 - Now before we do any more work, lets add a .gitignore file and tell git to ignore the lib directory.
+  !!! THIS IS EASILY FORGETABLE, PLEASE ADD THE GITIGNORE. !!!
 
 - Next, we add our component. Lets add a button.
 
@@ -172,7 +189,7 @@ Happy developing!
 
 ---
 
-## Lerna
+## Lerna Info
 
 TODO
 
@@ -180,13 +197,13 @@ https://github.com/lerna/lerna
 
 ---
 
-## Microbundle
+## Microbundle Info
 
 TODO
 
 ---
 
-## Storybook
+## Storybook Info
 
 This project is using storybook in the root of our repository as our development environment, as well as provides us documentation for each component written.
 
