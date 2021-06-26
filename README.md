@@ -8,7 +8,7 @@ The first half of this project was using this video, a great reference for start
 | ------------------------------------------------------------- |
 | [Why?](#why)                                                  |
 | [Initial Lerna Setup](#initial-lerna-setup)                   |
-| [Initial Storybook Setup](#initial-storybook-setup)            |
+| [Initial Storybook Setup](#initial-storybook-setup)           |
 | [Starting The Dev Environment](#starting-the-dev-environment) |
 | [Lerna Info](#lerna-info)                                     |
 | [Microbundle Info](#microbundle-info)                         |
@@ -340,3 +340,5 @@ GENERAL
 - Learn more about `lerna bootstrap`
 
 - Actions not tracking in storybook
+
+- Add testing to library
