@@ -104,12 +104,12 @@ Go to pacakge.json > add a new attribute called `"source": "path-to-source-file.
 ```
 
 - Now before we do any more work, lets add a .gitignore file and tell git to ignore the lib directory.
-  !!! THIS IS EASILY FORGETABLE, PLEASE ADD THE GITIGNORE. !!!
+  
+>>> !!! THIS IS EASILY FORGETABLE, PLEASE ADD THE GITIGNORE !!! <<<
 
 - Next, we add our component. Lets add a button.
 
-Create index.js if you have not already
-Add the following code:
+Create index.js if you have not already, and add the following code:
 
 ```
 import React from 'react';
@@ -139,18 +139,18 @@ export default CustomButton;
 - Side Note 1: If you are linking packages within this repository (ex: comp2 is importing comp1), make sure to list these in the modules package.json dependency section, I'll list an example below. Also, be sure to run lerna bootstrap to symlink the dependency, creating it's own node_module within that package that contains just those dependencies.
 
 ```
-	"dependencies": {
-		"@test/test-package2": "^1.0.0",
-		"@test/test-package3": "^2.2.0"
-	}
+"dependencies": {
+	"@test/test-package2": "^1.0.0",
+	"@test/test-package3": "^2.2.0"
+}
 ```
 
 - Side Note 2: Another note, if you are using other dependencies such as lodash, add those to the peerDependency section of the modules package.json
 
 ```
 "peerDependencies": {
-		"@material-ui/core": "^4.11.3"
-	}
+	"@material-ui/core": "^4.11.3"
+}
 ```
 
 - From here, you commit any changes, run `lerna bootstrap`, `npm run build`, then `lerna publish`. Add the correct version(s) to your packages and, voila, your packages have been published to npm!
