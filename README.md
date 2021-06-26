@@ -4,21 +4,21 @@ Monorepo using Lerna (independent) to handle managing our mutli package reposito
 
 The first half of this project was using this video, a great reference for starting: https://www.youtube.com/watch?v=pU87ufl2lDc&ab_channel=chantastic
 
-| Table of Contents                           |
-| ------------------------------------------- |
-| [Why?](#why)                                |
-| [Initial Lerna Setup](#initial-lerna-setup) |
-| Initial Storybook Setup                     |
-| Starting The Dev Environment                |
-| Lerna Info                                  |
-| Microbundle Info                            |
-| Storybook Info                              |
-| Root Level Commands                         |
-| Lerna Commands                              |
-| Microbundle Commands                        |
-| Storybook Commands                          |
-| Other Commands                              |
-| Questions/Answers                           |
+| Table of Contents                                             |
+| ------------------------------------------------------------- |
+| [Why?](#why)                                                  |
+| [Initial Lerna Setup](#initial-lerna-setup)                   |
+| [Initial Storybook Setup](#inital-storybook-setup)            |
+| [Starting The Dev Environment](#starting-the-dev-environment) |
+| [Lerna Info](#lerna-info)                                     |
+| [Microbundle Info](#microbundle-info)                         |
+| [Storybook Info](#storybook-info)                             |
+| [Root Level Commands](#root-level-commands)                   |
+| [Lerna Commands](#lerna-commands)                             |
+| [Microbundle Commands](#microbundle-commands)                 |
+| [Storybook Commands](#storybook-commands)                     |
+| [Other Commands](#other-commands)                             |
+| [Questions/Answers](#questions-/-answers)                     |
 
 ## Why?
 
