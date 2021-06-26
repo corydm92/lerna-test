@@ -39,7 +39,7 @@ Because these modules are packaged independently, we get to pick and choose exac
 
 ---
 
-## Initial Setup
+## Initial Lerna Setup
 
 This setup assumes you have a npm account, organization, and have npm credentials to publish from the console.
 
@@ -123,7 +123,29 @@ export default CustomButton;
 "dev": "lerna run dev",
 ```
 
-- If
+- Side Note 1: If you are linking packages within this repository (ex: comp2 is importing comp1), make sure to list these in the modules package.json dependency section. Also, be sure to run lerna bootstrap to symlink the dependency, creating it's own node_module within that package that contains just those dependencies.
+
+- Side Note 2: Another note, if you are using other dependencies such as lodash, add those to the peerDependency section of the modules package.json
+
+- From here, you commit any changes, run `lerna bootstrap`, `npm run build`, then `lerna publish`. Add the correct version(s) to your packages and, voila, your packages have been published to npm!
+
+- Ending Note: At the time of this writing, I've noticed that our host app will sometimes bundle dependencies within components, and will sometimes install them at the root of our npm package (please see the symlink tree in the Q/A section). This isn't an issue in the host app, but I don't have a great answer as to why this happens.
+
+---
+
+## Initial Storybook Setup
+
+- At the root of the MonoRepo we have created, we are now ready to add Storybook to the app. This will give us a development environment, as well as provide proof of concepts, working examples, and documentation for what we create.
+
+- Run `npx sb init` in the root of our project
+
+- Run `npm i -D react react-dom` to install react and react-dom as dev dependencies.
+
+- From here, all we need to do is run `npm run storybook` to start storybook, and in a seperate terminal run `npm run dev` to have microbundle watch for changes.
+
+- The rest is pretty self explanitory, please see the .storybook/ directory, the examples in stories/..., and the storybook documentation.
+
+Happy developing!
 
 ---
 
@@ -163,7 +185,7 @@ This project is using storybook in the root of our repository as our development
 
 - Runs `lerna run build`, important to run from root as this will fail if ran by itself.
 
-`npm run storybok`
+`npm run storybook`
 
 - Starts our storybook app.
 
@@ -300,15 +322,18 @@ Add .gitignore to modules in /packages/...
 
 ## Todos
 
-- Don't use index for distribution files, makes stack traces hard
+TEAM
 
-- ex: `Button/lib/index.js > Button/lib/Button.js`
+- Don't use index for distribution files, makes stack traces hard
+  ex: `Button/lib/index.js > Button/lib/Button.js`
+
+- Make sure release notes are made in the package README file as part of publishing requirements.
+
+- Make sure we are using .jsx extension for react component files.
+
+GENERAL
 
 - Add Initial Setup documentation
-
-- Provide release notes when making version bumps
-
-- Add what has changed in the package readme
 
 - Learn more about `lerna bootstrap`
 
