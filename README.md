@@ -51,7 +51,7 @@ Solution with Independent Mode:
 
 Because these modules are packaged independently, we get to pick and choose exactly what we need to go in which app.
 
-## Initial Lerna Setup
+## Initial Lerna and Microbundle Setup
 
 This setup assumes you have a npm account, organization, and have npm credentials to publish from the console.
 
@@ -105,7 +105,9 @@ Go to pacakge.json > add a new attribute called `"source": "path-to-source-file.
 
 - Now before we do any more work, lets add a .gitignore file and tell git to ignore the lib directory.
   
->>> !!! THIS IS EASILY FORGETABLE, PLEASE ADD THE GITIGNORE !!! <<<
+  
+### !!! THIS IS EASILY FORGETABLE, PLEASE ADD THE GITIGNORE !!!
+
 
 - Next, we add our component. Lets add a button.
 
