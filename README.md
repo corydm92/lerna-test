@@ -4,7 +4,6 @@ Monorepo using Lerna (independent) to handle managing our mutli package reposito
 
 The first half of this project was using this video, a great reference for starting: https://www.youtube.com/watch?v=pU87ufl2lDc&ab_channel=chantastic
 
-<center>
 | Table of Contents                                             |
 | ------------------------------------------------------------- |
 | [Why?](#why)                                                  |
@@ -20,7 +19,7 @@ The first half of this project was using this video, a great reference for start
 | [Storybook Commands](#storybook-commands)                     |
 | [Other Commands](#other-commands)                             |
 | [Questions/Answers](#questionsanswers)                        |
-</center>
+
 ## Why?
 
 Creating a multi component repository allows us as engineers to have a single source for package development. Having one repo helps symlinking issues, and not having multiple repositories for single packages provides a better workflow.
