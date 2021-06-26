@@ -4,23 +4,21 @@ Monorepo using Lerna (independent) to handle managing our mutli package reposito
 
 The first half of this project was using this video, a great reference for starting: https://www.youtube.com/watch?v=pU87ufl2lDc&ab_channel=chantastic
 
-| Table of Contents            |
-| ---------------------------- |
-| [Why?](#why)                 |
-| Initial Lerna Setup          |
-| Initial Storybook Setup      |
-| Starting The Dev Environment |
-| Lerna Info                   |
-| Microbundle Info             |
-| Storybook Info               |
-| Root Level Commands          |
-| Lerna Commands               |
-| Microbundle Commands         |
-| Storybook Commands           |
-| Other Commands               |
-| Questions/Answers            |
-
----
+| Table of Contents                           |
+| ------------------------------------------- |
+| [Why?](#why)                                |
+| [Initial Lerna Setup](#initial-lerna-setup) |
+| Initial Storybook Setup                     |
+| Starting The Dev Environment                |
+| Lerna Info                                  |
+| Microbundle Info                            |
+| Storybook Info                              |
+| Root Level Commands                         |
+| Lerna Commands                              |
+| Microbundle Commands                        |
+| Storybook Commands                          |
+| Other Commands                              |
+| Questions/Answers                           |
 
 ## Why?
 
@@ -52,8 +50,6 @@ Solution with Independent Mode:
 - App 1 keeps Grid v1.0.0, and installs DisplayContainerComponent v1.0.0
 
 Because these modules are packaged independently, we get to pick and choose exactly what we need to go in which app.
-
----
 
 ## Initial Lerna Setup
 
@@ -161,8 +157,6 @@ export default CustomButton;
 
 - Ending Note: At the time of this writing, I've noticed that our host app will sometimes bundle dependencies within components, and will sometimes install them at the root of our npm package (please see the symlink tree in the Q/A section). This isn't an issue in the host app, but I don't have a great answer as to why this happens.
 
----
-
 ## Initial Storybook Setup
 
 - At the root of the MonoRepo we have created, we are now ready to add Storybook to the app. This will give us a development environment, as well as provide proof of concepts, working examples, and documentation for what we create.
@@ -177,8 +171,6 @@ export default CustomButton;
 
 Happy developing!
 
----
-
 ## Starting The Dev Environment
 
 - We need to run two things to start working in this environment, we need to run storybook and we need to set microbundle to watch for changings in real time.
@@ -187,27 +179,19 @@ Happy developing!
 
 - In another terminal, run `npm run dev`, this will run microbundle in watch mode for all of our packages. Note that there is no output in this terminal, perhaps there is a verbose flag but currently not an issue one way or another.
 
----
-
 ## Lerna Info
 
 TODO
 
 https://github.com/lerna/lerna
 
----
-
 ## Microbundle Info
 
 TODO
 
----
-
 ## Storybook Info
 
 This project is using storybook in the root of our repository as our development environment, as well as provides us documentation for each component written.
-
----
 
 ## Root Level Commands
 
@@ -255,8 +239,6 @@ This project is using storybook in the root of our repository as our development
 
 - Runs our build process for each changed package in /packages
 
----
-
 ## Microbundle Commands
 
 These commands are ran by lerna, running at the package level
@@ -265,8 +247,6 @@ These commands are ran by lerna, running at the package level
 
 - Builds the module, the `--jsx React.createElement` is necessary for react modules.
 - `--no-compress` formats the build in a human readable format
-
----
 
 ## Storybook Commands
 
@@ -278,16 +258,12 @@ These commands are ran by lerna, running at the package level
 
 - Starts Storybook in development mode
 
----
-
 ## Other Commands
 
 `npm info <scope>`
 
 - Useful to get info on a package you have pushed
 - ex: `npm info @cdm-lerna-test/avatar`
-
----
 
 ## Questions/Answers
 
@@ -340,15 +316,11 @@ package name: (@cdm-lerna-test/test1) @cdm-lerna-test/Test1
 Sorry, name can no longer contain capital letters.
 ```
 
----
-
 ## Notes
 
 Add .gitignore to modules in /packages/...
 
 - Add a gitignore to ignore our distribution directory per module
-
----
 
 ## Todos
 
