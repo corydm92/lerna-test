@@ -1,6 +1,6 @@
 {
 	"name": "@cdm-lerna-test/usage",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Component that references other packages in our MonoRepo",
 	"author": "Cory Morrissey <corymorrissey@lithia.com>",
 	"homepage": "https://github.com/corydm92/lerna-test#readme",
@@ -31,6 +31,6 @@
 	},
 	"dependencies": {
 		"@cdm-lerna-test/avatar": "^1.0.0",
-		"@cdm-lerna-test/button": "^2.2.0"
+		"@cdm-lerna-test/button": "^2.2.1"
 	}
 }
