@@ -6,7 +6,7 @@ const CustomButton = ({
 	buttonText,
 	variant = 'contained',
 	primary = true,
-	callback = () => console.log('Click!'),
+	callback = () => console.log('New Click Text!'),
 }) => {
 	return (
 		<Button
