@@ -38,7 +38,7 @@ export default {
 const Template = (args) => {
 	return (
 		<MuiThemeProvider theme={theme}>
-			<div>Test</div>
+			<Input />
 		</MuiThemeProvider>
 	);
 };

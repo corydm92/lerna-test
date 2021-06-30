@@ -6,7 +6,7 @@
 	"homepage": "https://github.com/corydm92/lerna-test#readme",
 	"license": "MIT",
 	"main": "lib/input.js",
-	"source": "index.jsx",
+	"source": "index.js",
 	"directories": {
 		"lib": "lib",
 		"test": "__tests__"
@@ -28,5 +28,8 @@
 	},
 	"bugs": {
 		"url": "https://github.com/corydm92/lerna-test/issues"
+	},
+	"peerDependencies": {
+		"@material-ui/core": "^4.11.3"
 	}
 }
