@@ -75,7 +75,7 @@ I use MIT for licence
 
 Go to pacakge.json > add a new attribute called `"source": "path-to-source-file.js"`.
 
-- From here, this is how your new packages package.json should look. If you have questions on other attributes, please refer to lerna's documentaiton:
+- From here, this is how your new packages package.json should look. If you have questions on other attributes, please refer to lerna's documentaiton (note, it is important to have your source file with a `.js` extension):
 
 ```
 {
@@ -178,6 +178,8 @@ Happy developing!
 - In one terminal, run `npm run storybook` to kick off our storybook server.
 
 - In another terminal, run `npm run dev`, this will run microbundle in watch mode for all of our packages. Note that there is no output in this terminal, perhaps there is a verbose flag but currently not an issue one way or another.
+
+- It is important to note, that storybook is actually reading from the distribution files themselves. So `npm run dev` which will fire off microbundle in watch mode (see microbundle commands for more details), is actually rebuilding the package each time 
 
 ## Lerna Info
 
@@ -315,6 +317,10 @@ node_modules/
 package name: (@cdm-lerna-test/test1) @cdm-lerna-test/Test1
 Sorry, name can no longer contain capital letters.
 ```
+
+- Q: Why is Storybook having issues serving our components? I installed my package just fine in the host app, but it doesn't load in my dev environment?
+
+- A: I came across this issue when I was importing MUI components into my package. I wanted to have my source file have the `.jsx` extension, as we are technically creating a React component and this convention is what I use when creating components in a CRA environment. I was able to fix this issue by renaming my source file to the standard.js and rebuilding the distribution files.
 
 ## Notes
 
