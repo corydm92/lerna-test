@@ -1,6 +1,6 @@
 {
 	"name": "@cdm-lerna-test/input",
-	"version": "0.0.0",
+	"version": "1.0.0-alpha.0",
 	"description": "Text input component",
 	"author": "Cory Morrissey <corymorrissey@lithia.com>",
 	"homepage": "https://github.com/corydm92/lerna-test#readme",
