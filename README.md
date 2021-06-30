@@ -267,6 +267,17 @@ These commands are ran by lerna, running at the package level
 - Useful to get info on a package you have pushed
 - ex: `npm info @cdm-lerna-test/avatar`
 
+`npm unpublish <package-name> -f`
+
+- Removes entire package from organization. It takes 1 full day for that package scope to become available in npm, and is recommended to just update a package instead of deleting it. 
+- This command is more useful for trial and error packages, I've done this process just to see how it works and would recommend trying this at some point yourself.
+- ex: `npm unpublish @cdm-lerna-test/dummy-component -f`
+
+`git tag -d release/aug2002 && git push origin :refs/tags/release/aug2002`
+
+- This will remove a tag locally, then push these changes to github removing the tag
+- ex: `git tag -d @cdm-lerna-test/input@1.0.0-alpha.0 && git push origin :refs/tags/@cdm-lerna-test/input@1.0.0-alpha.0`
+
 ## Questions/Answers
 
 - Q: Why am I getting `h is not defined` after adding a module to my host app?
@@ -322,6 +333,14 @@ Sorry, name can no longer contain capital letters.
 
 - A: I came across this issue when I was importing MUI components into my package. I wanted to have my source file have the `.jsx` extension, as we are technically creating a React component and this convention is what I use when creating components in a CRA environment. I was able to fix this issue by renaming my source file to the standard.js and rebuilding the distribution files.
 
+- Q: I want to delete a package that I've created, how do I do this?
+
+- A: Please see other [Other Commands](#other-commands) section on unpublishing a package.
+
+- Q: I deleted my NPM Package because there was a mistake, when I create a new package with the same name I now get `lerna ERR! lerna fatal: tag '@cdm-lerna-test/dummy-component@1.0.0' already exists`. What did I do wrong?
+
+- A: This error message is related to git tags that Lerna generates when we run our publish script. In order to remove a git tag from a CLI, please see the [Other Commands](#other-commands) section on removing git tags.
+
 ## Notes
 
 Add .gitignore to modules in /packages/...
@@ -336,8 +355,6 @@ TEAM
   ex: `Button/lib/index.js > Button/lib/Button.js`
 
 - Make sure release notes are made in the package README file as part of publishing requirements.
-
-- Make sure we are using .jsx extension for react component files.
 
 GENERAL
 
