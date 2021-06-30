@@ -21,6 +21,7 @@
 		"dev": "lerna run dev",
 		"publish": "lerna publish",
 		"bootstrap": "lerna bootstrap",
+		"changed": "lerna changed",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook"
 	},
