@@ -245,10 +245,20 @@ This project is using storybook in the root of our repository as our development
 
 These commands are ran by lerna, running at the package level
 
+`microbundle`
+
+- Bundles your code once and exits. (alias: microbundle build)
+
+`microbundle watch` 
+
+- Bundles your code, then re-bundles when files change.
+
 `microbundle --jsx React.createElement --no-compress`
 
 - Builds the module, the `--jsx React.createElement` is necessary for react modules.
 - `--no-compress` formats the build in a human readable format
+
+
 
 ## Storybook Commands
 
