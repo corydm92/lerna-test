@@ -316,6 +316,10 @@ package name: (@cdm-lerna-test/test1) @cdm-lerna-test/Test1
 Sorry, name can no longer contain capital letters.
 ```
 
+- Q: Why is Storybook having issues serving our components? I installed my package just fine in the host app, but it doesn't load in my dev environment?
+
+- A: I came across this issue when I was importing MUI components into my package. I wanted to have my source file have the `.jsx` extension, as we are technically creating a React component and this convention is what I use when creating components in a CRA environment. I was able to fix this issue by renaming my source file to the standard.js and rebuilding the distribution files.
+
 ## Notes
 
 Add .gitignore to modules in /packages/...
