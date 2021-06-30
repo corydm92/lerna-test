@@ -103,7 +103,7 @@ Go to pacakge.json > add a new attribute called `"source": "path-to-source-file.
 }
 ```
 
-- Now before we do any more work, lets add a .gitignore file and tell git to ignore the lib directory.
+- Now before we do any more work, configure our app gitignore to not track any of our lib directories. Add `packages/**/lib` to the root level gitignore.
 
 ### !!! THIS IS EASILY FORGETABLE, PLEASE ADD THE GITIGNORE !!!
 
@@ -342,5 +342,3 @@ GENERAL
 - Actions not tracking in storybook
 
 - Add testing to library
-
-- Create global gitignore field that ignores all /lib directories
