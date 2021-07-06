@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MuiThemeProvider } from '@material-ui/core';
 
-import { GeneralModal } from '../../packages/modals/index.js';
+import { GeneralModal } from '../../packages/modals';
 
 import { createMuiTheme } from '@material-ui/core';
 

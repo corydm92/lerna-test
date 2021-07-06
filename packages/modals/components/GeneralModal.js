@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Modal from './Modal';
 import { Button } from '@material-ui/core';
 import PropTypes from 'prop-types';
@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/styles';
 const useStyles = makeStyles((theme) => {
 	return {
 		submitButton: {
-			marginRight: theme.spacing(1),
+			marginRight: theme.spacing ? theme.spacing(1) : '8px !important',
 		},
 	};
 });
