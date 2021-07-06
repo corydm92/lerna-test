@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MuiThemeProvider } from '@material-ui/core';
 
-import Button from '../../packages/button/index.js';
+import { Modal } from '../../packages/modals/index.js';
 
 import { createMuiTheme } from '@material-ui/core';
 
@@ -31,27 +31,29 @@ const theme = createMuiTheme({
 });
 
 export default {
-	title: 'Example/Button',
-	component: Button,
+	title: 'Example/Modals',
+	component: Modal,
 };
 
-// We create a “template” of how args map to rendering
 const Template = (args) => {
+	const [showModal, setShowModal] = useState(false);
+
 	return (
 		<MuiThemeProvider theme={theme}>
-			<Button {...args} primary={args.primary || false} />
+			<button onClick={() => setShowModal(!showModal)}>Show Modal?</button>
+			<Modal
+				{...args}
+				open={showModal}
+				onDismiss={() => setShowModal(!showModal)}
+				// mainCallback={() => alert('Submit!')}
+			/>
 		</MuiThemeProvider>
 	);
 };
 
-// Each story then reuses that template
-export const Primary = Template.bind({});
-Primary.args = {
-	primary: true,
-	buttonText: 'Primary Button',
-};
+export const ModalExample = Template.bind({});
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-	buttonText: 'Secondary Button',
+ModalExample.args = {
+	title: 'Test Title',
+	content: "Here's some content!",
 };
