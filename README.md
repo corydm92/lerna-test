@@ -351,6 +351,10 @@ Sorry, name can no longer contain capital letters.
 
 - A: This error message is related to git tags that Lerna generates when we run our publish script. In order to remove a git tag from a CLI, please see the [Other Commands](#other-commands) section on removing git tags.
 
+- Q: I'm trying to use `makeStyles()` in my package, but I'm getting the error `Invalid hook call. Hooks can only be called inside of the body of a function component.`. How do I use `makeStyles()`?
+
+- A: It appears that trying to use custom hooks inside a package will lead react and react-dom verison issues. I've found that adding the react and react-dom versions to the package peerDependencies, running the build process, then starting storybook will solve the hooks issue. Currently, I'm not able to inherit `theme` within the package `makeStyles()` hook and have to use a ternary expression to statically generate spacing. This may be solved in the future by just using `styled-components` in the package, and leaving MUI to the host app for custom styling.
+
 ## Notes
 
 Add .gitignore to modules in /packages/...
