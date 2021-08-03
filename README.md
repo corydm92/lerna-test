@@ -69,11 +69,14 @@ This setup assumes you have a npm account, organization, and have npm credential
 I personally set the version to 0.0.0 when starting
 Add a description (can be changed in the packages package json)
 I use MIT for licence
-`Entry Point` is where your built code will live. I leave this as lib/package-name.js
+`Entry Point` is where your bundled code will live. I suggest the `dist` directory for publish-ready code, and the `lib` directory for source code.
+ex: `dist/package-name.js`
+
+- Side note: May need to install lerna globally to run lerna commands. `npm i -g lerna`
 
 - Next we move to `packages/package-name/package.json` add the source file, this is the file that will hold the actual code you want to build.
 
-Go to pacakge.json > add a new attribute called `"source": "path-to-source-file.js"`.
+Go to pacakge.json > add a new attribute called `"source": "lib/source-file.js"`.
 
 - From here, this is how your new packages package.json should look. If you have questions on other attributes, please refer to lerna's documentaiton (note, it is important to have your source file with a `.js` extension):
 
@@ -85,14 +88,14 @@ Go to pacakge.json > add a new attribute called `"source": "path-to-source-file.
   "author": "Test User <testuser@email.com>",
   "homepage": "",
   "license": "MIT",
-  "main": "lib/test-package.js",
-  "source": "index.js",
+  "main": "dist/test-package.js",
+  "source": "lib/index.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "publishConfig": {
     "access": "public"
@@ -103,7 +106,7 @@ Go to pacakge.json > add a new attribute called `"source": "path-to-source-file.
 }
 ```
 
-- Now before we do any more work, configure our app gitignore to not track any of our lib directories. Add `packages/**/lib` to the root level gitignore.
+- Now before we do any more work, configure our app gitignore to not track any of our lib directories. Add `packages/**/dist` to the root level gitignore.
 
 ### !!! THIS IS EASILY FORGETABLE, PLEASE ADD THE GITIGNORE !!!
 
@@ -179,7 +182,7 @@ Happy developing!
 
 - In another terminal, run `npm run dev`, this will run microbundle in watch mode for all of our packages. Note that there is no output in this terminal, perhaps there is a verbose flag but currently not an issue one way or another.
 
-- It is important to note, that storybook is actually reading from the distribution files themselves. So `npm run dev` which will fire off microbundle in watch mode (see microbundle commands for more details), is actually rebuilding the package each time 
+- It is important to note, that storybook is actually reading from the distribution files themselves. So `npm run dev` which will fire off microbundle in watch mode (see microbundle commands for more details), is actually rebuilding the package each time
 
 ## Lerna Info
 
@@ -249,7 +252,7 @@ These commands are ran by lerna, running at the package level
 
 - Bundles your code once and exits. (alias: microbundle build)
 
-`microbundle watch` 
+`microbundle watch`
 
 - Bundles your code, then re-bundles when files change.
 
@@ -257,8 +260,6 @@ These commands are ran by lerna, running at the package level
 
 - Builds the module, the `--jsx React.createElement` is necessary for react modules.
 - `--no-compress` formats the build in a human readable format
-
-
 
 ## Storybook Commands
 
@@ -279,7 +280,7 @@ These commands are ran by lerna, running at the package level
 
 `npm unpublish <package-name> -f`
 
-- Removes entire package from organization. It takes 1 full day for that package scope to become available in npm, and is recommended to just update a package instead of deleting it. 
+- Removes entire package from organization. It takes 1 full day for that package scope to become available in npm, and is recommended to just update a package instead of deleting it.
 - This command is more useful for trial and error packages, I've done this process just to see how it works and would recommend trying this at some point yourself.
 - ex: `npm unpublish @cdm-lerna-test/dummy-component -f`
 
@@ -294,13 +295,19 @@ These commands are ran by lerna, running at the package level
 
 - A: This was related to microbundle not compiling jsx correctly, must add the `--jsx React.createElement` flag to the build script.
 
+---
+
 - Q: Why doesn't `lerna run build` work? ex: `lerna run build` > `npm WARN Local package.json exists, but node_modules missing, did you mean to install?`
 
 - A: When runing a lerna command that triggers a npm package in a module (lerna run build > microbundle), you must define that script in the root package.json, and trigger it with "npm run xxx". I believe this is to do with scoping our project node_modules in order to run these inside a package that has no existing node_modules.
 
+---
+
 - Q: How do I retry publishing if publish fails?
 
 - A: If it has been updated, you can force re-publish. `lerna publish --force-publish $(ls packages/)`. If this doesn't work, you can add a small commit to force a change, then re commit and re publish.
+
+---
 
 - Q: What happens if a module is symlinked to a version of a component, but I want to still use the most updated version of a component? (ex: symlinked to button v1.0.0, but I want to use button v3.0.0 in the project)?
 
@@ -328,6 +335,8 @@ node_modules/
 │ │ │ ├─ button(v1.0.0)/
 ```
 
+---
+
 - Q: I want to name my package with a capital, as is common convention with React components?
 
 - A: NPM does not support capitalized scopes
@@ -339,21 +348,49 @@ package name: (@cdm-lerna-test/test1) @cdm-lerna-test/Test1
 Sorry, name can no longer contain capital letters.
 ```
 
+---
+
 - Q: Why is Storybook having issues serving our components? I installed my package just fine in the host app, but it doesn't load in my dev environment?
 
 - A: I came across this issue when I was importing MUI components into my package. I wanted to have my source file have the `.jsx` extension, as we are technically creating a React component and this convention is what I use when creating components in a CRA environment. I was able to fix this issue by renaming my source file to the standard.js and rebuilding the distribution files.
+
+---
 
 - Q: I want to delete a package that I've created, how do I do this?
 
 - A: Please see other [Other Commands](#other-commands) section on unpublishing a package.
 
+---
+
 - Q: I deleted my NPM Package because there was a mistake, when I create a new package with the same name I now get `lerna ERR! lerna fatal: tag '@cdm-lerna-test/dummy-component@1.0.0' already exists`. What did I do wrong?
 
 - A: This error message is related to git tags that Lerna generates when we run our publish script. In order to remove a git tag from a CLI, please see the [Other Commands](#other-commands) section on removing git tags.
 
+---
+
 - Q: I'm trying to use `makeStyles()` in my package, but I'm getting the error `Invalid hook call. Hooks can only be called inside of the body of a function component.`. How do I use `makeStyles()`?
 
 - A: It appears that trying to use custom hooks inside a package will lead react and react-dom verison issues. I've found that adding the react and react-dom versions to the package peerDependencies, running the build process, then starting storybook will solve the hooks issue. Currently, I'm not able to inherit `theme` within the package `makeStyles()` hook and have to use a ternary expression to statically generate spacing. This may be solved in the future by just using `styled-components` in the package, and leaving MUI to the host app for custom styling.
+
+---
+
+- Q: Why can't I use assets in my packages? I have images and SVGs I want but I'm getting this error: `Error: Unexpected token (Note that you need plugins to import files that are not JavaScript)`
+
+- A: Found on the internet, microbundle does not currently support bundling of assets, there are ways to add CSS modules to your bundle but this is the [answer](https://github.com/developit/microbundle/issues/283) I found: `IMHO we shouldnt do this at the moment because microbundle's main goal is to produce highly optimized distributable libraries and unfortunately importing assets is currently really coupled to the consuming bundler.` Fear not, for there is another way to add assets using a different bundler. [microbundle-crl](https://www.npmjs.com/package/microbundle-crl) is a package forked from the original microbundle to be used as a bundler for the `create-react-library` npm package. This version was created to add some quality of life changes as well as add `rollup-plugin-smart-asset` that gives us the ability to have assets in the package. Two things to change to make this work, you'll have to update your package scripts to this:
+
+```
+  {
+    "build": "microbundle-crl --no-compress",
+    "dev": "microbundle-crl watch"
+  }
+```
+
+And when importing the SVG, you can't specify path. What's interesting about this, is if you run the source file you will get import errors whereas if you have your main path in the components package.json pointed at the dist folder, it works no problem.
+
+```
+Old: `import logoImg from './logo-image.svg';`
+New: `import logoImg from 'logo-image.svg';`
+```
 
 ## Notes
 
